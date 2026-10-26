@@ -1,0 +1,319 @@
+/* ---------- Hero ---------- */
+.hero {
+  padding-block: var(--space-10) var(--space-12);
+}
+
+@media (min-width: 64rem) {
+  .hero {
+    padding-block: 3.5rem var(--space-24);
+  }
+}
+
+.heroGrid {
+  display: grid;
+  /* minmax(0, 1fr): palavra longa (texto ampliado) quebra em vez de alargar a coluna */
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-8) var(--space-10);
+}
+
+@media (min-width: 64rem) {
+  .heroGrid {
+    /* Proporção do Figma: texto ~446px + imagem 664px */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.49fr);
+  }
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.title {
+  max-inline-size: 100%; /* item com align-items: flex-start: sem isso, palavra longa vaza */
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-h2);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-block: var(--space-2);
+}
+
+.metaItem {
+  display: flex;
+  flex-wrap: wrap; /* com texto ampliado, o valor desce para a linha de baixo em vez de vazar */
+  align-items: center;
+  gap: 0 var(--space-2);
+  line-height: 1.5;
+}
+
+.metaItem dd {
+  margin: 0;
+  font-weight: var(--fw-bold);
+}
+
+.metaIcon {
+  flex-shrink: 0;
+}
+
+.heroAction {
+  margin-block-start: var(--space-2);
+}
+
+.heroMedia {
+  order: -1;
+}
+
+@media (min-width: 64rem) {
+  /*
+   * A imagem fica no topo da linha, na posição do Figma. O texto continua centralizado nela; quando
+   * os campos extras o deixam mais alto que a imagem, é ele que define a altura da linha.
+   */
+  .heroMedia {
+    order: 0;
+    align-self: start;
+  }
+}
+
+.heroMediaSkeleton {
+  aspect-ratio: 16 / 9;
+}
+
+.loadingPage {
+  min-block-size: 100svh;
+}
+
+/* ---------- Diferenciais ---------- */
+.features {
+  padding-block-end: var(--section-space);
+}
+
+/* ---------- Sobre o curso + acordeão ---------- */
+/* Os diferenciais já terminam com o respiro da seção: 80px até o título, como no Figma */
+.about {
+  padding-block: 0 var(--section-space);
+}
+
+.aboutGrid {
+  display: grid;
+  align-items: start;
+  gap: var(--space-8) var(--space-16);
+}
+
+@media (min-width: 64rem) {
+  /* Figma: descrição com 4 das 12 colunas (373px), 56px de espaço e acordeão de 721px */
+  .aboutGrid {
+    grid-template-columns: minmax(0, 23.3rem) minmax(0, 1fr);
+    column-gap: 3.5rem;
+  }
+
+  /* Coluna da descrição acompanha a leitura dos módulos, como no Figma */
+  .aboutText {
+    position: sticky;
+    inset-block-start: var(--space-8);
+  }
+}
+
+.aboutText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+}
+
+.aboutSubtitle {
+  margin-block-start: var(--space-4);
+  font-size: var(--fs-lead);
+  font-weight: var(--fw-bold);
+}
+
+/*
+ * Painéis do acordeão (abertos no protótipo do Figma): o texto vem logo abaixo do título, e uma
+ * linha em branco (26px) separa módulos, perguntas e blocos, e também parágrafos de listas.
+ */
+.panelList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.625rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.panelTitle {
+  font-size: var(--fs-lead);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-lead);
+}
+
+.panelText {
+  color: var(--color-text-muted);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+}
+
+.bullets {
+  margin: 0;
+  padding-inline-start: 1.75rem;
+  color: var(--color-text-muted);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+  list-style-type: disc; /* dentro de outra lista (Módulos) o padrão seria um círculo vazado */
+}
+
+.panelText + .bullets,
+.bullets + .panelText {
+  margin-block-start: 1.625rem;
+}
+
+.bullets li::marker {
+  font-size: 0.75em;
+}
+
+/* ---------- Fale com a gente ---------- */
+.contact {
+  --focus-ring-color: var(--color-text-inverse);
+
+  padding-block: var(--section-space);
+  background-color: var(--color-red-800);
+  color: var(--color-text-inverse);
+}
+
+.contactContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+/* ---------- Barra fixa de matrícula ---------- */
+.stickyBar {
+  --focus-ring-color: var(--color-text-inverse);
+
+  container-type: inline-size;
+  position: fixed;
+  inset-inline: 0;
+  /* 18px do fim da tela, como no Figma; não fica sob a barra de gestos do iPhone */
+  inset-block-end: max(1.125rem, env(safe-area-inset-bottom, 0px));
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(calc(100% + var(--space-4)));
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    opacity var(--duration-base) ease;
+}
+
+.stickyBarVisible {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*
+ * Com a barra visível, quem navega pelo teclado não pode ter o elemento focado escondido atrás dela
+ * (WCAG 2.4.11): o navegador passa a rolá-lo para cima da barra. 7rem cobre a barra empilhada do
+ * celular com texto ampliado (6,7rem); no padrão ela tem 4,75rem (76px). Somam-se os 18px até o fim
+ * da tela e uma folga.
+ */
+@media (height > 30rem) {
+  :global(html):has(.stickyBarVisible) {
+    scroll-padding-block-end: calc(7rem + 1.125rem + var(--space-4));
+  }
+}
+
+/* Telas baixas (celular deitado ou zoom de 300% a 400%): a barra ocuparia boa parte da tela e o
+   botão "Matricule-se" do topo já cumpre o papel dela */
+@media (max-height: 30rem) {
+  .stickyBar {
+    display: none;
+  }
+}
+
+.stickyInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-4) var(--space-4) var(--space-6);
+  border-radius: var(--radius-xl);
+  background-color: var(--color-ink);
+  color: var(--color-text-inverse);
+  box-shadow: var(--shadow-bar);
+}
+
+/* Sem a sombra (modos de contraste), uma borda separa a barra do conteúdo que passa por trás */
+:global(html[data-contrast='high']) .stickyInner {
+  border: 2px solid;
+}
+
+@media (forced-colors: active) {
+  .stickyInner {
+    border: 2px solid CanvasText;
+  }
+}
+
+/* O botão mantém o rótulo inteiro; quem encolhe (com reticências) é o nome do curso */
+.stickyAction {
+  flex-shrink: 0;
+}
+
+.stickyTitle {
+  min-inline-size: 0;
+  font-size: var(--fs-lead);
+  font-weight: var(--fw-semibold);
+  line-height: 1.3;
+}
+
+/*
+ * Celular com texto ampliado no menu "Acessibilidade": título e botão não cabem lado a lado, então
+ * o botão vai para baixo, na largura toda. Em rem, o limite cresce com o texto; a 100% só valeria
+ * abaixo de 304px, então o leiaute do Figma não muda.
+ */
+@container (max-width: 19rem) {
+  .stickyInner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2);
+    padding-inline-start: var(--space-4);
+  }
+}
+
+.stickyFullName {
+  display: none;
+}
+
+.stickyShortName {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (min-width: 48rem) {
+  .stickyFullName {
+    display: inline;
+  }
+
+  .stickyShortName {
+    display: none;
+  }
+}
+
+/* ---------- Estados (erro / não encontrado) ---------- */
+.statePage {
+  padding-block: var(--space-16);
+}

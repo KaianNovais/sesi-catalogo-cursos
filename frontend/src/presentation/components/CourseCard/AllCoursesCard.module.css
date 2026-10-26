@@ -1,0 +1,42 @@
+.card {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-block-size: var(--course-card-height);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+}
+
+.label {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-h3);
+}
+
+.icon {
+  flex-shrink: 0;
+  transition: transform var(--duration-fast) ease;
+}
+
+/* No Figma este card não se move no hover; só a seta indica a ação */
+@media (hover: hover) {
+  .card:hover .icon {
+    transform: translateX(4px);
+  }
+}
+
+/* Alto contraste: sem sombra, o contorno delimita o card */
+:global(html[data-contrast='high']) .card {
+  border: 1px solid;
+}
+
+@media (forced-colors: active) {
+  .card {
+    border: 1px solid CanvasText;
+  }
+}

@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- API real (WebApplicationFactory) contra um PostgreSQL de verdade, criado e apagado pelos testes. -->
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" />
+    <PackageReference Include="xunit.v3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\CourseCatalog.Api\CourseCatalog.Api.csproj" />
+    <ProjectReference Include="..\..\src\CourseCatalog.Infrastructure\CourseCatalog.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Os mesmos arquivos usados no banco real: seed e script de criação dos usuários. -->
+    <None Include="..\..\..\data\courses.seed.json" Link="courses.seed.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\..\data\search-cases.json" Link="search-cases.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\database\setup.sql" Link="database\setup.sql" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+</Project>

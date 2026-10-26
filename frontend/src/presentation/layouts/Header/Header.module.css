@@ -1,0 +1,187 @@
+.header {
+  /* Container query (e não media query) no menu: com o texto ampliado no menu "Acessibilidade",
+     os 48rem crescem junto e o menu recolhível assume antes de os links quebrarem linha */
+  container-type: inline-size;
+  z-index: 50;
+  inset-inline: 0;
+  inset-block-start: 0;
+  transition:
+    background-color var(--duration-base) ease,
+    box-shadow var(--duration-base) ease,
+    color var(--duration-base) ease;
+}
+
+.overlay {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.static {
+  position: relative;
+}
+
+/*
+ * Telas baixas (celular deitado ou zoom de 300% a 400%): o cabeçalho deixa de acompanhar a rolagem
+ * para não ocupar boa parte da tela (WCAG 1.4.10).
+ */
+@media (max-height: 30rem) {
+  .overlay {
+    position: absolute;
+  }
+
+  .sticky {
+    position: relative;
+  }
+}
+
+/* Linha divisória dentro dos 76px do cabeçalho (no Figma ela não soma altura) */
+.solid {
+  background-color: var(--color-surface);
+  box-shadow: inset 0 -1px 0 var(--color-border);
+  color: var(--color-ink);
+}
+
+/* Nos modos de contraste a sombra some; a divisória vira borda */
+:global(html[data-contrast='high']) .header {
+  border-block-end: 1px solid;
+}
+
+@media (forced-colors: active) {
+  .solid {
+    border-block-end: 1px solid CanvasText;
+  }
+}
+
+.transparent {
+  background-color: transparent;
+  color: var(--color-text-inverse);
+  --focus-ring-color: var(--color-text-inverse);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-block-size: var(--header-height);
+}
+
+.logo {
+  display: inline-flex;
+  padding-block: var(--space-2);
+  color: var(--color-brand-strong);
+}
+
+.transparent .logo {
+  color: var(--color-text-inverse);
+}
+
+.logo svg {
+  inline-size: auto;
+  block-size: 1.1875rem; /* 19px */
+}
+
+.links {
+  display: flex;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+  padding-inline: var(--space-2);
+  border-radius: var(--radius-md);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+}
+
+/* Empurra o botão de acessibilidade (e o que vem depois) para a direita */
+.accessibility {
+  margin-inline-start: auto;
+}
+
+/* Celular estreito (ou texto ampliado): menos espaço entre os itens e botões de 44px, para o logo
+   manter o tamanho ao lado dos dois botões */
+@container (max-width: 22.5rem) {
+  .bar {
+    gap: var(--space-1);
+  }
+
+  .bar .accessibility,
+  .bar .menuButton {
+    inline-size: 2.75rem;
+    block-size: 2.75rem;
+  }
+}
+
+/* ---------- Mobile: menu recolhível ---------- */
+.menuButton {
+  margin-inline-end: calc(-1 * var(--space-2));
+}
+
+.nav {
+  display: none;
+}
+
+.menuOpen .nav {
+  position: absolute;
+  inset-block-start: 100%;
+  inset-inline: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--gutter) var(--space-6);
+  border-block-end: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  box-shadow: 0 16px 24px rgb(12 12 13 / 0.08);
+}
+
+.menuOpen .links {
+  flex-direction: column;
+  gap: 0;
+}
+
+.menuOpen .link {
+  inline-size: 100%;
+  min-block-size: 3rem;
+  font-size: var(--fs-lead);
+}
+
+/* ---------- Desktop ---------- */
+@container (min-width: 48rem) {
+  .menuButton {
+    display: none;
+  }
+
+  .nav,
+  .menuOpen .nav {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-4);
+    padding: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .links,
+  .menuOpen .links {
+    flex-direction: row;
+    gap: var(--space-4);
+  }
+
+  .menuOpen .link {
+    inline-size: auto;
+    min-block-size: 2.75rem;
+    font-size: var(--fs-body);
+  }
+}

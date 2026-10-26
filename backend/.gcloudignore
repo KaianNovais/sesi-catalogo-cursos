@@ -1,0 +1,11 @@
+# Arquivos que o "gcloud builds submit" NÃO envia para o Cloud Build: só vai o que o Dockerfile usa.
+.gcloudignore
+.dockerignore
+bin/
+obj/
+tests/
+TestResults/
+database/
+.vs/
+*.user
+dotnet-tools.json

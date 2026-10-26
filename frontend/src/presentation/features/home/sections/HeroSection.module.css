@@ -1,0 +1,88 @@
+.hero {
+  --focus-ring-color: var(--color-text-inverse);
+
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-block-size: min(37.625rem, 100svh); /* 602px no desktop, como no Figma */
+  padding-block: calc(var(--header-height) + var(--space-12)) var(--space-16);
+  overflow: hidden;
+  background-color: var(--color-red-800);
+  color: var(--color-text-inverse);
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+}
+
+/*
+ * Desktop: enquadramento do Figma (frame de 1366px), com a foto quase no tamanho original —
+ * 140,9% da largura do hero, deslocada 148px para a esquerda e 200px para cima. Margens em %
+ * são relativas à largura, então o enquadramento se mantém em telas mais largas ou estreitas.
+ * Se mudar, atualize o `sizes` do HeroSection.tsx e do preload no index.html.
+ */
+@media (min-width: 64rem) {
+  /* Mais respiro embaixo sobe o bloco de texto centralizado: título a 135px do topo, como no Figma */
+  .hero {
+    padding-block-end: var(--space-20);
+  }
+
+  .image {
+    inset: 0 auto auto 0;
+    inline-size: 140.9%;
+    max-inline-size: none; /* o reset global limita imagens a 100% */
+    block-size: auto;
+    margin-block-start: -14.93%;
+    margin-inline-start: -10.91%;
+  }
+}
+
+/* Véu vermelho do Figma sobre a fotografia (cor e opacidade ajustadas por regressão sobre o protótipo) */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: rgb(159 5 2 / 0.84);
+}
+
+@media (max-height: 30rem) and (orientation: landscape) {
+  .hero {
+    min-block-size: auto;
+    padding-block: calc(var(--header-height) + var(--space-6)) var(--space-10);
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  max-inline-size: 11ch;
+  font-size: var(--fs-display);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-display);
+  text-wrap: balance;
+}
+
+.lead {
+  max-inline-size: 29rem;
+  margin-block: var(--space-6) var(--space-8);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+}
+
+/* Alto contraste: a foto e o véu vermelho saem de trás do texto (fica texto branco sobre preto) */
+:global(html[data-contrast='high']) .image,
+:global(html[data-contrast='high']) .hero::before {
+  display: none;
+}

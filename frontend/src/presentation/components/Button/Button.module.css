@@ -1,0 +1,100 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  min-height: 2.5rem;
+  padding: 0 var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color var(--duration-fast) ease,
+    border-color var(--duration-fast) ease,
+    color var(--duration-fast) ease,
+    transform var(--duration-fast) ease;
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.button:disabled,
+.button[aria-disabled='true'] {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.icon {
+  flex-shrink: 0;
+  transition: transform var(--duration-fast) ease;
+}
+
+/* ---------- Tamanhos ---------- */
+.sm {
+  min-height: 2.25rem;
+}
+
+.md {
+  min-height: 2.5rem;
+}
+
+.lg {
+  min-height: 2.75rem;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* ---------- Variantes ---------- */
+.light {
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.dark {
+  background-color: var(--color-ink);
+  color: var(--color-text-inverse);
+}
+
+.outline {
+  background-color: transparent;
+  border-color: var(--color-border-strong);
+  color: var(--color-ink);
+}
+
+.outline-light {
+  background-color: transparent;
+  border-color: rgb(255 255 255 / 0.45);
+  color: var(--color-text-inverse);
+}
+
+/* Efeitos de hover só em dispositivos com mouse: no toque eles "grudam" após o clique */
+@media (hover: hover) {
+  .button:hover:not(:disabled) .icon:last-child {
+    transform: translateX(3px);
+  }
+
+  .light:hover:not(:disabled) {
+    background-color: #f1eded;
+  }
+
+  .dark:hover:not(:disabled) {
+    background-color: #2b2b2e;
+  }
+
+  .outline:hover:not(:disabled) {
+    border-color: var(--color-ink);
+    background-color: var(--color-surface-muted);
+  }
+
+  .outline-light:hover:not(:disabled) {
+    border-color: var(--color-text-inverse);
+    background-color: rgb(255 255 255 / 0.1);
+  }
+}

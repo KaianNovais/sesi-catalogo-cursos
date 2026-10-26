@@ -1,0 +1,25 @@
+.heading {
+  display: flex;
+  flex-direction: column;
+  max-inline-size: 100%; /* dentro de colunas flex-start, palavra longa quebra em vez de vazar */
+  /* Figma: 21px entre o topo do sobretítulo e o do título */
+  gap: 1px;
+}
+
+.center {
+  align-items: center;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: var(--fs-overline);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-overline);
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-h2);
+}

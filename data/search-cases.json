@@ -1,0 +1,31 @@
+{
+  "description": "Casos de busca que o mock do front e a API precisam responder igual. Testados nos dois lados: frontend/src/application/courses.test.ts e backend/tests/CourseCatalog.IntegrationTests/SearchParityTests.cs.",
+  "cases": [
+    { "search": "CIENCIA DOS MATERIAIS", "slugs": ["ciencia-dos-materiais-na-metalurgia"] },
+    { "search": "  ciência   dos\tmateriais ", "slugs": ["ciencia-dos-materiais-na-metalurgia"] },
+    { "search": "estatistica e qualidade", "slugs": ["estatistica-e-controle-de-qualidade"] },
+    {
+      "search": "metalurgia",
+      "slugs": [
+        "matematica-para-a-precisao",
+        "fisica-do-movimento-e-da-energia",
+        "ciencia-dos-materiais-na-metalurgia"
+      ]
+    },
+    { "search": "Comunicação", "slugs": ["comunicacao-tecnica-na-industria"] },
+    {
+      "search": "INDÚSTRIA",
+      "slugs": ["comunicacao-tecnica-na-industria", "economia-circular-na-industria"]
+    },
+    { "search": "fisica´", "slugs": [] },
+    { "search": "matem^atica", "slugs": [] },
+    { "search": "^", "slugs": [] },
+    { "search": "ſ", "slugs": [] },
+    { "search": "\u0085metal", "slugs": [] },
+    { "search": "metal\u0000urgia", "slugs": [] },
+    { "search": "%", "slugs": [] },
+    { "search": "_", "slugs": [] },
+    { "search": "' OR 1=1 --", "slugs": [] },
+    { "search": "curso inexistente", "slugs": [] }
+  ]
+}

@@ -1,0 +1,62 @@
+.carousel {
+  /* Recuo que alinha o primeiro card com o conteúdo da página, enquanto a
+     faixa de cards "vaza" até a borda direita da tela, como no Figma. */
+  --carousel-inset: max(var(--gutter), (100% - var(--container-max)) / 2);
+  --slide-width: min(80vw, 17.1875rem); /* 275px */
+}
+
+.track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--slide-width);
+  gap: var(--space-4);
+  margin: 0;
+  padding-block: var(--space-2) var(--space-6);
+  padding-inline: var(--carousel-inset);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--carousel-inset);
+  scrollbar-width: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  display: flex;
+  scroll-snap-align: start;
+}
+
+.slide > * {
+  flex: 1;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap; /* em telas muito estreitas (320px) as setas descem de linha */
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  /* Somado ao respiro da sombra dos cards: 38px entre os cards e os botões, como no Figma */
+  margin-block-start: var(--space-2);
+}
+
+.controls {
+  display: flex;
+  gap: var(--space-4);
+  margin-inline-start: auto;
+}
+
+.controls[data-scrollable='false'] {
+  visibility: hidden;
+}
+
+.dark .controls {
+  color: var(--color-ink);
+}
+
+.light .controls {
+  color: var(--color-text-inverse);
+}

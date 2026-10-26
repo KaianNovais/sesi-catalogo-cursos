@@ -1,0 +1,67 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-8);
+  min-block-size: 24.75rem;
+  margin: 0;
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+}
+
+.brand {
+  background-color: var(--color-red-600);
+  color: var(--color-text-inverse);
+  /* Figma usa 70% de opacidade; 88% garante contraste AA (4,5:1) no texto pequeno */
+  --role-color: rgb(255 255 255 / 0.88);
+}
+
+.light {
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-card);
+  --role-color: var(--color-text-muted);
+}
+
+.quote {
+  margin: 0;
+  font-size: var(--fs-lead);
+  line-height: 1.4;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.author {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+}
+
+.role {
+  color: var(--role-color);
+  font-size: var(--fs-small);
+}
+
+.rating {
+  display: flex;
+  margin-block-start: var(--space-3);
+  margin-inline-start: -0.125rem;
+}
+
+.starEmpty {
+  opacity: 0.3;
+}
+
+/* Alto contraste: sem cor de fundo nem sombra, o contorno delimita o card */
+:global(html[data-contrast='high']) .card {
+  border: 1px solid;
+}
+
+@media (forced-colors: active) {
+  .card {
+    border: 1px solid CanvasText;
+  }
+}

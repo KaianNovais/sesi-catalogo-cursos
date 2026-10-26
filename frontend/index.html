@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Catálogo de cursos SESI Indústria: pesquise, filtre e conheça os cursos disponíveis no ambiente virtual de aprendizagem."
+    />
+    <meta name="theme-color" content="#890100" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Fonte do texto pré-carregada: evita atraso na renderização e troca tardia de fonte -->
+    <link
+      rel="preload"
+      href="/fonts/open-sans-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <title>SESI Indústria | Catálogo de cursos</title>
+    <script>
+      // Preferências do menu "Acessibilidade" aplicadas antes da primeira pintura (sem "piscar" o
+      // tamanho do texto ou o contraste). Espelha applyPreferences em
+      // src/presentation/accessibility/preferences.ts: mantenha os dois em sincronia.
+      try {
+        const saved = JSON.parse(localStorage.getItem('a11y:preferences') || '{}');
+        const root = document.documentElement;
+        if (saved.textSize === '125' || saved.textSize === '150')
+          root.dataset.textSize = saved.textSize;
+        if (saved.highContrast === true) root.dataset.contrast = 'high';
+        if (saved.wideSpacing === true) root.dataset.textSpacing = 'wide';
+        if (saved.underlineLinks === true) root.dataset.links = 'underline';
+        if (saved.reduceMotion === true) root.dataset.motion = 'reduce';
+      } catch {
+        // Armazenamento indisponível ou valor inválido: segue com o padrão.
+      }
+    </script>
+    <script>
+      // Na página inicial, a foto do hero é o maior elemento da tela (LCP). Como a
+      // interface é renderizada pelo React, ela só seria descoberta depois do
+      // JavaScript; o preload antecipa o download já durante o parse do HTML.
+      if (location.pathname === '/') {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.fetchPriority = 'high';
+        link.imageSrcset =
+          '/images/hero/hero-image-640.webp 640w, /images/hero/hero-image-1280.webp 1280w, /images/hero/hero-image-1920.webp 1920w';
+        link.imageSizes = '(min-width: 64rem) 141vw, 100vw'; // igual ao sizes do HeroSection
+        document.head.append(link);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Esta aplicação precisa de JavaScript habilitado para funcionar.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

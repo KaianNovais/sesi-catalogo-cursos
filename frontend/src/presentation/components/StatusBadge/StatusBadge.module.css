@@ -1,0 +1,49 @@
+.badge {
+  --status-color: var(--color-status-closed);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 1.75rem;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  font-size: 0.75rem;
+  font-weight: var(--fw-semibold);
+  line-height: 1.2;
+}
+
+.dot {
+  flex-shrink: 0;
+  inline-size: 0.5rem;
+  block-size: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--status-color);
+}
+
+/* Nos modos de contraste a cor do status não aparece; o ponto vira um marcador neutro e o texto
+   continua informando o status */
+:global(html[data-contrast='high']) .dot {
+  background-color: #fff !important;
+}
+
+@media (forced-colors: active) {
+  .dot {
+    forced-color-adjust: none;
+    background-color: CanvasText;
+  }
+}
+
+.inscricoes-abertas {
+  --status-color: var(--color-status-open);
+}
+
+.em-breve {
+  --status-color: var(--color-status-soon);
+}
+
+.encerrado {
+  --status-color: var(--color-status-closed);
+}

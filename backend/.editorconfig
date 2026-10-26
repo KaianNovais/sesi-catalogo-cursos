@@ -1,0 +1,16 @@
+# Regras de C# do back-end (complementam o .editorconfig da raiz).
+
+[*.cs]
+# Estilo verificado no build (EnforceCodeStyleInBuild) e no `dotnet format --verify-no-changes`
+csharp_style_namespace_declarations = file_scoped:warning
+dotnet_diagnostic.IDE0161.severity = warning
+dotnet_diagnostic.IDE0005.severity = warning
+dotnet_sort_system_directives_first = true
+csharp_style_var_for_built_in_types = true:silent
+csharp_style_var_when_type_is_apparent = true:silent
+csharp_prefer_braces = when_multiline:silent
+csharp_style_expression_bodied_methods = when_on_single_line:silent
+
+# Código gerado pelo EF Core (migrations): fora das regras de estilo e dos analisadores
+[**/Migrations/*.cs]
+generated_code = true

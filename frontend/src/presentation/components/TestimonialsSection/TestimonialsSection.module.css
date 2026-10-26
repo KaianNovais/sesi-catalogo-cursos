@@ -1,0 +1,19 @@
+.section {
+  padding-block: var(--section-space);
+}
+
+.brand {
+  --focus-ring-color: var(--color-text-inverse);
+
+  background-color: var(--color-red-800);
+  color: var(--color-text-inverse);
+}
+
+.accent {
+  background-color: var(--accent);
+  color: var(--color-ink);
+}
+
+.carousel {
+  margin-block-start: var(--space-6);
+}

@@ -1,0 +1,44 @@
+.section {
+  --focus-ring-color: var(--color-text-inverse);
+
+  /* Continua o fundo dos depoimentos: 77px entre as setas e o vídeo, como no Figma */
+  padding-block: 0 var(--section-space);
+  background-color: var(--color-red-800);
+  color: var(--color-text-inverse);
+}
+
+.grid {
+  display: grid;
+  /* minmax(0, 1fr): palavra longa (texto ampliado) quebra em vez de alargar a coluna */
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start; /* no Figma o texto começa na altura do topo do vídeo */
+  gap: var(--space-8);
+}
+
+@media (min-width: 64rem) {
+  .grid {
+    /* Texto com a largura de 4 das 12 colunas do Figma (373px) */
+    grid-template-columns: minmax(0, 23.3rem) minmax(0, 1fr);
+  }
+
+  /*
+   * No navegador, a 2ª linha do Figma ("…através dos") mede 0,1px a mais que a coluna. A folga de
+   * 8px, dentro do espaço até o vídeo, mantém as mesmas quebras de linha do protótipo.
+   */
+  .lead {
+    margin-inline-end: calc(-1 * var(--space-2));
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.lead {
+  margin-block-end: var(--space-4);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+}

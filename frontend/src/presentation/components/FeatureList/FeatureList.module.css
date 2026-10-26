@@ -1,0 +1,79 @@
+.root {
+  container-type: inline-size;
+}
+
+/* Mobile first: uma coluna */
+.list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-8) var(--grid-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Quantidades diferentes de 3 e 4: grade automática */
+@container (min-width: 28rem) {
+  .list:not([data-count='3'], [data-count='4']) {
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  }
+
+  /* 4 itens: 2×2 antes de caber em uma linha */
+  .list[data-count='4'] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 3 itens: uma coluna até caberem os três lado a lado */
+@container (min-width: 34rem) {
+  .list[data-count='3'] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@container (min-width: 48rem) {
+  .list[data-count='4'] {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  inline-size: 3rem;
+  block-size: 3rem;
+  margin-block-end: var(--space-4);
+  border-radius: var(--radius-lg);
+}
+
+.brand .icon {
+  background-color: var(--color-brand-tint);
+  color: var(--color-brand-strong);
+}
+
+.accent .icon {
+  background-color: var(--accent);
+  color: var(--color-ink);
+}
+
+.title {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  line-height: 1.4;
+}
+
+.description {
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+/* Alto contraste: o fundo colorido do ícone some; o contorno mantém o formato */
+:global(html[data-contrast='high']) .icon {
+  border: 1px solid;
+}

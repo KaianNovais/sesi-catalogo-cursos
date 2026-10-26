@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <!-- Apresentação (API REST) e raiz de composição: único projeto que conhece a infraestrutura. -->
+
+  <PropertyGroup>
+    <UserSecretsId>2f5e5ac7-8c93-47b1-a9b6-88cab695da67</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CourseCatalog.Application\CourseCatalog.Application.csproj" />
+    <ProjectReference Include="..\CourseCatalog.Infrastructure\CourseCatalog.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,9 @@
+# Mesmo filtro do .gcloudignore, para builds locais com Docker.
+**/bin
+**/obj
+tests
+**/TestResults
+database
+**/.vs
+**/*.user
+dotnet-tools.json

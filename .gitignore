@@ -1,0 +1,34 @@
+# Sistema operacional / editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Node / front-end
+node_modules/
+dist/
+coverage/
+*.log
+.env.local
+.env.*.local
+
+# Claude Code: configurações pessoais (as compartilhadas ficam em .claude/settings.json).
+# Não crie CLAUDE.local.md: ele faz o Claude Code deixar de ler os AGENTS.md.
+.claude/settings.local.json
+CLAUDE.local.md
+
+# .NET / back-end (os packages.lock.json são versionados de propósito)
+bin/
+obj/
+*.user
+.vs/
+TestResults/
+# Segredos locais ficam no dotnet user-secrets, fora do repositório; nunca em arquivos como estes:
+appsettings.*.local.json
+
+# Firebase CLI: cache local do deploy
+.firebase/
+
+# ZIP dos arquivos de publicação (scripts/gerar-zip-publicacao.sh): entregue à parte, não versionado
+entrega/

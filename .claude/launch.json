@@ -1,0 +1,65 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "sesi-frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "frontend",
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "5173",
+        "--strictPort"
+      ],
+      "port": 5173
+    },
+    {
+      "name": "sesi-frontend-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "frontend",
+        "run",
+        "preview",
+        "--",
+        "--port",
+        "4173",
+        "--strictPort"
+      ],
+      "port": 4173
+    },
+    {
+      "name": "sesi-backend",
+      "runtimeExecutable": "dotnet",
+      "runtimeArgs": [
+        "run",
+        "--project",
+        "backend/src/CourseCatalog.Api",
+        "--launch-profile",
+        "http"
+      ],
+      "port": 5080,
+      "autoPort": false
+    },
+    {
+      "name": "sesi-frontend-api",
+      "runtimeExecutable": "env",
+      "runtimeArgs": [
+        "VITE_API_MODE=http",
+        "npm",
+        "--prefix",
+        "frontend",
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "5174",
+        "--strictPort"
+      ],
+      "port": 5174
+    }
+  ]
+}

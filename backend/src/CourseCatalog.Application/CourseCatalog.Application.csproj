@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Aplicação: casos de uso, contrato da API (DTOs) e a porta do repositório. Só conhece o domínio. -->
+
+  <ItemGroup>
+    <ProjectReference Include="..\CourseCatalog.Domain\CourseCatalog.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

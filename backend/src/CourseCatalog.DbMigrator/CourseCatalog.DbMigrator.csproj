@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Prepara o banco (migrations + seed + permissões) com a credencial de dono. A API só lê. -->
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <UserSecretsId>e5f97f4f-c1c9-44ce-9420-f94cba42d2da</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CourseCatalog.Infrastructure\CourseCatalog.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+    <!-- Ferramentas do EF (dotnet ef migrations add); não vai para o executável publicado. -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Fonte única dos dados fictícios: o arquivo é referenciado, não copiado para o repositório. -->
+    <None Include="..\..\..\data\courses.seed.json" Link="courses.seed.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,40 @@
+.frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface-muted);
+}
+
+.image {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+/* Miniatura de vídeo: véu preto de 40% sobre a foto e sob o selo, como no Figma */
+.video::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgb(0 0 0 / 0.4);
+}
+
+/* Selo do Figma: 80px, branco a 72% e ícone de 48px */
+.play {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  display: grid;
+  place-items: center;
+  inline-size: 5rem;
+  block-size: 5rem;
+  border-radius: 50%;
+  background-color: rgb(255 255 255 / 0.72);
+  color: var(--color-ink);
+  translate: -50% -50%;
+}
+
+/* Alto contraste: o selo de "play" ganha contorno para não sumir sobre a foto */
+:global(html[data-contrast='high']) .play {
+  border: 2px solid;
+}

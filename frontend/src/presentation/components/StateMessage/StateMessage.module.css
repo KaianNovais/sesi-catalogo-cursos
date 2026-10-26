@@ -1,0 +1,36 @@
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  max-inline-size: 32rem;
+  margin-inline: auto;
+  padding: var(--space-12) var(--space-4);
+  text-align: center;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  inline-size: 3rem;
+  block-size: 3rem;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-brand-tint);
+  color: var(--color-brand-strong);
+}
+
+.title {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-h3);
+}
+
+.description {
+  color: var(--color-text-muted);
+  font-size: var(--fs-body);
+  line-height: var(--lh-lead);
+}
+
+.action {
+  margin-block-start: var(--space-2);
+}

@@ -1,0 +1,490 @@
+{
+  "categories": [
+    { "id": 1, "slug": "matematica", "name": "Matemática", "color": "#FCD19C" },
+    { "id": 2, "slug": "ciencias-da-natureza", "name": "Ciências da Natureza", "color": "#E4CCFF" },
+    { "id": 3, "slug": "linguagens", "name": "Linguagens", "color": "#C9E3FF" },
+    { "id": 4, "slug": "sustentabilidade", "name": "Sustentabilidade", "color": "#CBEFD3" }
+  ],
+  "modalities": [
+    { "id": 1, "code": "ead", "name": "EAD" },
+    { "id": 2, "code": "presencial", "name": "Presencial" },
+    { "id": 3, "code": "hibrido", "name": "Híbrido" }
+  ],
+  "statuses": [
+    { "id": 1, "code": "inscricoes-abertas", "name": "Inscrições abertas" },
+    { "id": 2, "code": "em-breve", "name": "Em breve" },
+    { "id": 3, "code": "encerrado", "name": "Encerrado" }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "slug": "matematica-para-a-precisao",
+      "fullName": "Matemática para a Precisão: Medidas e Escalas na Metalurgia",
+      "shortName": "Matemática para a Precisão",
+      "summary": "Aplicação de grandezas, proporções e escalas em processos de corte, furação e usinagem.",
+      "description": "Explore nosso curso de Matemática para a Precisão: Medidas e Escalas na Metalurgia, perfeito para quem deseja se destacar nesse campo! Este programa abrangente foi desenvolvido para capacitar profissionais com as habilidades e conhecimentos fundamentais para garantir medições precisas e eficientes no ambiente metalúrgico.",
+      "categoryId": 1,
+      "modalityCode": "ead",
+      "statusCode": "inscricoes-abertas",
+      "workloadHours": 40,
+      "targetAudience": "Operadores de máquinas, técnicos e inspetores de qualidade do setor metalúrgico que desejam aprimorar a precisão das medições.",
+      "imageUrl": "/images/courses/matematica-para-a-precisao.webp",
+      "availableFrom": "2027-01-05",
+      "certification": "SESI",
+      "featured": true,
+      "modules": [
+        {
+          "title": "Introdução à Matemática na Metalurgia",
+          "lessons": [
+            { "title": "Medidas e escalas", "description": "Conceitos fundamentais de medidas e escalas aplicados à metalurgia." },
+            { "title": "Precisão e qualidade", "description": "Importância da precisão nas medições e controle de qualidade." },
+            { "title": "Normas no Brasil", "description": "Panorama das normas e regulamentos no Brasil relacionados à metalurgia." }
+          ]
+        },
+        {
+          "title": "Identificação e Avaliação de Medidas",
+          "lessons": [
+            { "title": "Tipos de medidas", "description": "Tipos de medidas utilizadas: comprimento, massa, volume e temperatura." },
+            { "title": "Análise de precisão", "description": "Técnicas de análise de precisão nas medições." },
+            { "title": "Gráficos e tabelas", "description": "Elaboração de gráficos e tabelas de medidas." }
+          ]
+        },
+        {
+          "title": "Normas e Regulamentações",
+          "lessons": [
+            { "title": "ABNT e ISO", "description": "Estudo das principais normas aplicáveis à metalurgia (ABNT, ISO, entre outras)." },
+            { "title": "Aplicação das normas", "description": "Interpretação e aplicação prática das normas de medição." },
+            { "title": "Impactos legais", "description": "Atualizações e impactos legais nas práticas de medição." }
+          ]
+        },
+        {
+          "title": "Instrumentos de Medição",
+          "lessons": [
+            { "title": "Paquímetros e micrômetros", "description": "Tipos de instrumentos utilizados na metalurgia: paquímetros, micrômetros e balanças." },
+            { "title": "Seleção e calibração", "description": "Critérios de seleção, uso e calibração." },
+            { "title": "Responsabilidades", "description": "Responsabilidades legais de operadores e supervisores." }
+          ]
+        },
+        {
+          "title": "Prevenção de Erros de Medição",
+          "lessons": [
+            { "title": "Erros e incertezas", "description": "Tipos de erros e incertezas nas medições." },
+            { "title": "Precisão e exatidão", "description": "Procedimentos para garantir a precisão e exatidão." },
+            { "title": "Prática de medição", "description": "Treinamento prático em técnicas de medição." }
+          ]
+        },
+        {
+          "title": "Ergonomia e Eficiência na Medição",
+          "lessons": [
+            { "title": "Princípios ergonômicos", "description": "Princípios ergonômicos aplicados ao uso de instrumentos de medição." },
+            { "title": "Prevenção de lesões", "description": "Prevenção de lesões por uso inadequado de ferramentas." },
+            { "title": "Qualidade de vida", "description": "Qualidade de vida no ambiente de trabalho." }
+          ]
+        },
+        {
+          "title": "Análise de Resultados de Medição",
+          "lessons": [
+            { "title": "Análise de dados", "description": "Técnicas de análise de dados de medições." },
+            { "title": "Relatórios e planos de ação", "description": "Elaboração de relatórios e planos de ação para melhorias." },
+            { "title": "Indicadores", "description": "Indicadores de precisão e melhoria contínua." }
+          ]
+        },
+        {
+          "title": "Cultura de Precisão e Comportamento Seguro",
+          "lessons": [
+            { "title": "Cultura organizacional", "description": "Desenvolvimento de uma cultura organizacional voltada à precisão nas medições." },
+            { "title": "Comunicação e liderança", "description": "Comunicação eficaz e liderança em práticas de medição." },
+            { "title": "Engajamento", "description": "Programas de conscientização e engajamento dos colaboradores." }
+          ]
+        },
+        {
+          "title": "Tecnologias Aplicadas à Medição",
+          "lessons": [
+            { "title": "Sensores e automação", "description": "Uso de plataformas digitais, sensores e automação na medição de precisão." },
+            { "title": "Gestão da qualidade", "description": "Sistemas de gestão de qualidade." },
+            { "title": "Tendências", "description": "Tendências e inovações no setor metalúrgico." }
+          ]
+        },
+        {
+          "title": "Avaliação Final e Certificação",
+          "lessons": [
+            { "title": "Teste de conhecimentos", "description": "Teste de conhecimentos adquiridos sobre medidas e escalas." },
+            { "title": "Estudos de caso", "description": "Atividades práticas e estudos de caso." },
+            { "title": "Certificado", "description": "Emissão de certificado digital de conclusão." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "geometria-e-modelagem-no-design-textil",
+      "fullName": "Geometria e Modelagem no Design Têxtil",
+      "shortName": "Geometria no Design Têxtil",
+      "summary": "Explora formas geométricas, simetria e padrões matemáticos presentes em tecidos e estampas.",
+      "description": "Descubra como a geometria está por trás de cada estampa, padronagem e molde. O curso combina teoria e prática para que você crie e adapte padrões têxteis com rigor matemático, reduzindo desperdícios no corte e ampliando as possibilidades criativas do design.",
+      "categoryId": 1,
+      "modalityCode": "hibrido",
+      "statusCode": "em-breve",
+      "workloadHours": 30,
+      "targetAudience": "Designers, modelistas e estampadores da indústria têxtil e de confecção.",
+      "imageUrl": "/images/courses/geometria-e-modelagem-no-design-textil.webp",
+      "availableFrom": "2027-02-08",
+      "certification": "SESI",
+      "featured": true,
+      "modules": [
+        {
+          "title": "Fundamentos de Geometria Plana",
+          "lessons": [
+            { "title": "Formas e ângulos", "description": "Pontos, retas, ângulos e polígonos aplicados ao desenho de moldes." },
+            { "title": "Áreas e perímetros", "description": "Cálculo de áreas e perímetros para estimar o consumo de tecido." }
+          ]
+        },
+        {
+          "title": "Simetria e Transformações",
+          "lessons": [
+            { "title": "Simetrias", "description": "Simetria axial, rotacional e translacional em padronagens." },
+            { "title": "Transformações geométricas", "description": "Reflexão, rotação e ampliação de motivos gráficos." }
+          ]
+        },
+        {
+          "title": "Padrões e Estampas",
+          "lessons": [
+            { "title": "Rapport", "description": "Construção do rapport e encaixe contínuo de estampas." },
+            { "title": "Padrões geométricos", "description": "Padrões clássicos da indústria: xadrez, listras, poás e chevron." }
+          ]
+        },
+        {
+          "title": "Modelagem e Encaixe",
+          "lessons": [
+            { "title": "Escalas de moldes", "description": "Ampliação e redução de moldes com escalas e proporções." },
+            { "title": "Encaixe eficiente", "description": "Técnicas de encaixe para reduzir o desperdício no corte." }
+          ]
+        },
+        {
+          "title": "Projeto Final",
+          "lessons": [
+            { "title": "Coleção cápsula", "description": "Desenvolvimento de uma coleção cápsula com padrões geométricos autorais." },
+            { "title": "Apresentação", "description": "Apresentação do projeto e avaliação por banca." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "estatistica-e-controle-de-qualidade",
+      "fullName": "Estatística e Controle de Qualidade na Produção",
+      "shortName": "Estatística e Qualidade",
+      "summary": "Leitura e interpretação de dados de controle de qualidade e produtividade.",
+      "description": "Aprenda a transformar dados de produção em decisões. Você vai dominar ferramentas estatísticas essenciais para monitorar processos, identificar variações e conduzir ações de melhoria contínua com base em evidências.",
+      "categoryId": 1,
+      "modalityCode": "ead",
+      "statusCode": "inscricoes-abertas",
+      "workloadHours": 60,
+      "targetAudience": "Supervisores de produção, analistas e técnicos de qualidade.",
+      "imageUrl": "/images/courses/estatistica-e-controle-de-qualidade.webp",
+      "availableFrom": null,
+      "certification": "SESI",
+      "featured": true,
+      "modules": [
+        {
+          "title": "Estatística Descritiva",
+          "lessons": [
+            { "title": "Medidas de tendência central", "description": "Média, mediana e moda aplicadas a indicadores de produção." },
+            { "title": "Medidas de dispersão", "description": "Amplitude, variância e desvio padrão de processos produtivos." }
+          ]
+        },
+        {
+          "title": "Coleta e Organização de Dados",
+          "lessons": [
+            { "title": "Planos de amostragem", "description": "Como definir amostras representativas no chão de fábrica." },
+            { "title": "Folhas de verificação", "description": "Registro padronizado de ocorrências e não conformidades." }
+          ]
+        },
+        {
+          "title": "Ferramentas da Qualidade",
+          "lessons": [
+            { "title": "Pareto e Ishikawa", "description": "Priorização de problemas e análise de causa raiz." },
+            { "title": "Histogramas", "description": "Leitura da distribuição de medidas e identificação de desvios." }
+          ]
+        },
+        {
+          "title": "Controle Estatístico de Processo",
+          "lessons": [
+            { "title": "Cartas de controle", "description": "Construção e interpretação de cartas X-barra, R e p." },
+            { "title": "Capacidade do processo", "description": "Cálculo e interpretação dos índices Cp e Cpk." }
+          ]
+        },
+        {
+          "title": "Indicadores de Produtividade",
+          "lessons": [
+            { "title": "OEE", "description": "Eficiência global dos equipamentos e perdas de produção." },
+            { "title": "Painéis de indicadores", "description": "Criação de painéis visuais para acompanhamento diário." }
+          ]
+        },
+        {
+          "title": "Avaliação Final",
+          "lessons": [
+            { "title": "Estudo de caso", "description": "Análise estatística completa de um processo produtivo real." },
+            { "title": "Prova objetiva", "description": "Avaliação com correção automática e feedback imediato." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "fisica-do-movimento-e-da-energia",
+      "fullName": "Física do Movimento e da Energia na Metalurgia",
+      "shortName": "Física na Metalurgia",
+      "summary": "Estudo de forças, atrito, calor e energia em máquinas, fornos e prensas.",
+      "description": "Entenda os princípios físicos que governam o funcionamento de máquinas, fornos e prensas. Com aulas práticas em laboratório, o curso relaciona conceitos de mecânica e termodinâmica ao dia a dia da produção metalúrgica, com foco em eficiência energética e segurança.",
+      "categoryId": 2,
+      "modalityCode": "presencial",
+      "statusCode": "inscricoes-abertas",
+      "workloadHours": 80,
+      "targetAudience": "Mecânicos de manutenção, operadores de fornos e prensas e estudantes de cursos técnicos.",
+      "imageUrl": "/images/courses/fisica-do-movimento-e-da-energia.webp",
+      "availableFrom": "2026-11-16",
+      "certification": "SESI",
+      "featured": true,
+      "modules": [
+        {
+          "title": "Cinemática Industrial",
+          "lessons": [
+            { "title": "Velocidade e aceleração", "description": "Movimento de esteiras, eixos e ferramentas de corte." },
+            { "title": "Movimento circular", "description": "Rotação, frequência e torque em motores e tornos." }
+          ]
+        },
+        {
+          "title": "Forças e Atrito",
+          "lessons": [
+            { "title": "Leis de Newton", "description": "Aplicação das leis de Newton em sistemas mecânicos." },
+            { "title": "Atrito e lubrificação", "description": "Tipos de atrito, desgaste e boas práticas de lubrificação." }
+          ]
+        },
+        {
+          "title": "Trabalho, Energia e Potência",
+          "lessons": [
+            { "title": "Conservação de energia", "description": "Transformações de energia em prensas e martelos." },
+            { "title": "Potência e rendimento", "description": "Cálculo de potência e rendimento de equipamentos." }
+          ]
+        },
+        {
+          "title": "Calor e Temperatura",
+          "lessons": [
+            { "title": "Dilatação térmica", "description": "Efeitos da temperatura nas dimensões das peças." },
+            { "title": "Transferência de calor", "description": "Condução, convecção e radiação em fornos industriais." }
+          ]
+        },
+        {
+          "title": "Eficiência Energética",
+          "lessons": [
+            { "title": "Perdas de energia", "description": "Identificação de perdas e oportunidades de economia." },
+            { "title": "Segurança térmica", "description": "Prevenção de acidentes com equipamentos aquecidos." }
+          ]
+        },
+        {
+          "title": "Laboratório e Avaliação",
+          "lessons": [
+            { "title": "Práticas de laboratório", "description": "Experimentos com plano inclinado, alavancas e calorimetria." },
+            { "title": "Avaliação prática", "description": "Resolução de situações-problema do setor metalúrgico." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "quimica-e-sustentabilidade",
+      "fullName": "Química e Sustentabilidade",
+      "shortName": "Química e Sustentabilidade",
+      "summary": "Estudo das reações químicas envolvidas na tinturaria e acabamento de tecidos.",
+      "description": "Conheça a química por trás das cores e dos acabamentos têxteis e aprenda a reduzir o impacto ambiental desses processos. O curso aborda corantes, auxiliares químicos e o tratamento de efluentes sob a ótica da produção mais limpa.",
+      "categoryId": 2,
+      "modalityCode": "ead",
+      "statusCode": "encerrado",
+      "workloadHours": 20,
+      "targetAudience": "Profissionais de tinturaria, lavanderia industrial e acabamento têxtil.",
+      "imageUrl": "/images/courses/quimica-e-sustentabilidade.webp",
+      "availableFrom": "2026-03-02",
+      "certification": "SESI",
+      "featured": true,
+      "modules": [
+        {
+          "title": "Química dos Corantes",
+          "lessons": [
+            { "title": "Classes de corantes", "description": "Corantes reativos, dispersos e ácidos e suas aplicações." },
+            { "title": "Fixação da cor", "description": "Reações de fixação e fatores que influenciam a solidez." }
+          ]
+        },
+        {
+          "title": "Processos de Acabamento",
+          "lessons": [
+            { "title": "Auxiliares químicos", "description": "Função de amaciantes, umectantes e fixadores." },
+            { "title": "Acabamentos funcionais", "description": "Tratamentos repelentes, antichamas e antimicrobianos." }
+          ]
+        },
+        {
+          "title": "Tratamento de Efluentes",
+          "lessons": [
+            { "title": "Caracterização", "description": "Parâmetros de qualidade de efluentes têxteis." },
+            { "title": "Técnicas de tratamento", "description": "Processos físico-químicos e biológicos de tratamento." }
+          ]
+        },
+        {
+          "title": "Produção Mais Limpa",
+          "lessons": [
+            { "title": "Redução de consumo", "description": "Estratégias para reduzir água, energia e insumos químicos." },
+            { "title": "Avaliação final", "description": "Questionário final e plano de melhoria para o seu setor." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "slug": "ciencia-dos-materiais-na-metalurgia",
+      "fullName": "Ciência dos Materiais na Metalurgia",
+      "shortName": "Ciência dos Materiais",
+      "summary": "Conceitos básicos de estrutura, resistência e propriedades dos metais.",
+      "description": "Por que um aço é mais resistente que outro? Neste curso você estuda a estrutura interna dos metais, os ensaios que medem suas propriedades e os tratamentos térmicos que permitem adequá-los a cada aplicação industrial.",
+      "categoryId": 2,
+      "modalityCode": "hibrido",
+      "statusCode": "inscricoes-abertas",
+      "workloadHours": 40,
+      "targetAudience": "Técnicos em metalurgia, soldadores e inspetores de materiais.",
+      "imageUrl": "/images/courses/ciencia-dos-materiais-na-metalurgia.webp",
+      "availableFrom": "2026-12-01",
+      "certification": "SESI",
+      "featured": true,
+      "modules": [
+        {
+          "title": "Estrutura dos Metais",
+          "lessons": [
+            { "title": "Ligações metálicas", "description": "Estrutura atômica e ligações nos materiais metálicos." },
+            { "title": "Redes cristalinas", "description": "Estruturas cúbicas e hexagonais e seus defeitos." }
+          ]
+        },
+        {
+          "title": "Propriedades Mecânicas",
+          "lessons": [
+            { "title": "Resistência e ductilidade", "description": "Comportamento dos metais sob tração, compressão e flexão." },
+            { "title": "Dureza e tenacidade", "description": "Diferenças entre dureza, tenacidade e fragilidade." }
+          ]
+        },
+        {
+          "title": "Ensaios de Materiais",
+          "lessons": [
+            { "title": "Ensaios destrutivos", "description": "Ensaios de tração, impacto e dureza." },
+            { "title": "Ensaios não destrutivos", "description": "Ultrassom, líquido penetrante e partículas magnéticas." }
+          ]
+        },
+        {
+          "title": "Tratamentos Térmicos",
+          "lessons": [
+            { "title": "Têmpera e revenimento", "description": "Como o aquecimento e o resfriamento alteram as propriedades." },
+            { "title": "Recozimento e normalização", "description": "Alívio de tensões e homogeneização da estrutura." }
+          ]
+        },
+        {
+          "title": "Seleção de Materiais",
+          "lessons": [
+            { "title": "Critérios de seleção", "description": "Custo, desempenho e disponibilidade na escolha do material." },
+            { "title": "Estudo de caso", "description": "Seleção de materiais para um componente real da indústria." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "slug": "comunicacao-tecnica-na-industria",
+      "fullName": "Comunicação Técnica e Leitura de Documentos na Indústria",
+      "shortName": "Comunicação Técnica",
+      "summary": "Produção e interpretação de manuais, procedimentos operacionais e relatórios técnicos.",
+      "description": "Comunicar com clareza evita retrabalho e acidentes. O curso desenvolve a leitura crítica e a escrita de documentos técnicos, como procedimentos operacionais padrão, relatórios de ocorrência e instruções de trabalho, além de técnicas de comunicação com equipes.",
+      "categoryId": 3,
+      "modalityCode": "ead",
+      "statusCode": "em-breve",
+      "workloadHours": 24,
+      "targetAudience": "Líderes de equipe, técnicos e profissionais administrativos da indústria.",
+      "imageUrl": "/images/courses/comunicacao-tecnica-na-industria.webp",
+      "availableFrom": "2027-03-01",
+      "certification": "SESI",
+      "featured": false,
+      "modules": [
+        {
+          "title": "Leitura de Textos Técnicos",
+          "lessons": [
+            { "title": "Gêneros técnicos", "description": "Características de manuais, normas e fichas técnicas." },
+            { "title": "Estratégias de leitura", "description": "Identificação de informações essenciais e termos técnicos." }
+          ]
+        },
+        {
+          "title": "Escrita de Procedimentos",
+          "lessons": [
+            { "title": "POP e instruções de trabalho", "description": "Estrutura de procedimentos operacionais padrão." },
+            { "title": "Clareza e objetividade", "description": "Linguagem simples aplicada à documentação técnica." }
+          ]
+        },
+        {
+          "title": "Relatórios e Registros",
+          "lessons": [
+            { "title": "Relatórios de ocorrência", "description": "Registro de incidentes, falhas e não conformidades." },
+            { "title": "Comunicação de dados", "description": "Uso de tabelas e gráficos para apoiar a mensagem." }
+          ]
+        },
+        {
+          "title": "Comunicação com Equipes",
+          "lessons": [
+            { "title": "Diálogos de segurança", "description": "Condução de diálogos diários de segurança e alinhamentos." },
+            { "title": "Feedback", "description": "Técnicas de feedback construtivo no ambiente fabril." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "slug": "economia-circular-na-industria",
+      "fullName": "Economia Circular e Gestão de Resíduos na Indústria",
+      "shortName": "Economia Circular",
+      "summary": "Práticas de reaproveitamento, reciclagem e redução de desperdícios nos processos produtivos.",
+      "description": "Transforme resíduos em oportunidades. A partir de visitas técnicas e oficinas práticas, o curso apresenta os princípios da economia circular, a legislação de resíduos sólidos e ferramentas para implantar programas de reaproveitamento na sua empresa.",
+      "categoryId": 4,
+      "modalityCode": "presencial",
+      "statusCode": "encerrado",
+      "workloadHours": 32,
+      "targetAudience": "Gestores ambientais, coordenadores de produção e membros de comissões de sustentabilidade.",
+      "imageUrl": "/images/courses/economia-circular-na-industria.webp",
+      "availableFrom": "2026-05-04",
+      "certification": "SESI",
+      "featured": false,
+      "modules": [
+        {
+          "title": "Princípios da Economia Circular",
+          "lessons": [
+            { "title": "Do linear ao circular", "description": "Limites do modelo extrair-produzir-descartar." },
+            { "title": "Modelos de negócio", "description": "Remanufatura, compartilhamento e logística reversa." }
+          ]
+        },
+        {
+          "title": "Legislação de Resíduos",
+          "lessons": [
+            { "title": "Política Nacional de Resíduos Sólidos", "description": "Obrigações das indústrias e responsabilidade compartilhada." },
+            { "title": "Licenciamento", "description": "Inventário de resíduos e licenças ambientais." }
+          ]
+        },
+        {
+          "title": "Gestão de Resíduos na Prática",
+          "lessons": [
+            { "title": "Segregação e destinação", "description": "Classificação, armazenamento e destinação correta." },
+            { "title": "Indicadores ambientais", "description": "Métricas de geração, reciclagem e reaproveitamento." }
+          ]
+        },
+        {
+          "title": "Projeto de Melhoria",
+          "lessons": [
+            { "title": "Diagnóstico", "description": "Mapeamento de desperdícios em um processo da empresa." },
+            { "title": "Plano de ação", "description": "Proposta de programa de reaproveitamento com metas." }
+          ]
+        }
+      ]
+    }
+  ]
+}

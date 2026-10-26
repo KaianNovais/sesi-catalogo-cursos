@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Domínio: entidades e regras puras, sem dependência de banco, HTTP ou bibliotecas externas. -->
+
+</Project>

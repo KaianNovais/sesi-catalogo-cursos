@@ -1,0 +1,45 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  border-block-end: 1px solid var(--color-border);
+}
+
+.heading {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-h3);
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  inline-size: 100%;
+  min-block-size: 3.875rem; /* 62px + divisória: 63px por item, como no Figma */
+  padding: var(--space-3) 0;
+  border: 0;
+  background: none;
+  color: var(--color-ink);
+  font: inherit;
+  text-align: start;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.panel {
+  padding-block-end: 0.9375rem; /* 15px entre a última linha e a divisória, como no Figma */
+  animation: reveal var(--duration-base) var(--ease-out);
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}

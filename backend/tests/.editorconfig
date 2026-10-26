@@ -1,0 +1,5 @@
+# Regras só dos projetos de teste.
+
+[*.cs]
+# Nomes de teste no padrão Metodo_Comportamento (ex.: ToSearchKey_IgnoresAccents) usam sublinhado.
+dotnet_diagnostic.CA1707.severity = none

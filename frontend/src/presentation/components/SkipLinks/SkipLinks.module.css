@@ -1,0 +1,28 @@
+.skipLinks {
+  position: absolute;
+  inset-block-start: var(--space-2);
+  inset-inline-start: var(--space-2);
+  z-index: 100;
+}
+
+/* Fora da tela até receber foco; um atalho por vez aparece no canto superior */
+.link {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background-color: var(--color-ink);
+  color: var(--color-text-inverse);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  /* Largura do próprio texto (o contêiner não tem largura), sem passar da tela */
+  inline-size: max-content;
+  max-inline-size: calc(100vw - var(--space-4));
+  transform: translateY(-200%);
+  transition: transform var(--duration-fast) ease;
+}
+
+.link:focus {
+  transform: translateY(0);
+}

@@ -1,0 +1,291 @@
+.trigger {
+  flex-shrink: 0;
+}
+
+/* Aviso quando o painel não pôde ser baixado (sem conexão ou versão nova publicada) */
+.loadError {
+  position: absolute;
+  inset-block-start: calc(100% + var(--space-2));
+  inset-inline-end: var(--space-4);
+  z-index: 60;
+  max-inline-size: min(22rem, 100vw - 2 * var(--space-4));
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid transparent; /* aparece nos modos de contraste */
+  border-radius: var(--radius-md);
+  background-color: var(--color-ink);
+  color: var(--color-text-inverse);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-small);
+  box-shadow: var(--shadow-bar);
+}
+
+/* ---------- Janela (dialog nativo) ---------- */
+.dialog {
+  /* O <dialog> herda estilos de onde o botão está (cabeçalho transparente com foco branco, menu do AVA
+     com fonte de 14px): fixa o foco e a tipografia base */
+  --focus-ring-color: var(--color-focus);
+
+  inline-size: min(100% - 2 * var(--space-4), 30rem);
+  max-inline-size: none;
+  max-block-size: min(100dvh - 2 * var(--space-4), 52rem);
+  margin: auto;
+  padding: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  box-shadow: var(--shadow-bar);
+}
+
+.dialog::backdrop {
+  background-color: rgb(12 12 13 / 0.55);
+}
+
+/* O conteúdo ocupa a janela inteira: clique no próprio <dialog> só acontece no fundo escurecido */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-6);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-block-end: calc(-1 * var(--space-4));
+}
+
+/* Com texto a 150% e espaçamento ampliado no celular, o título encolhe e o "Fechar" continua visível */
+.title {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+  hyphens: auto; /* se precisar quebrar, quebra na sílaba e com hífen (lang="pt-BR") */
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-h3);
+}
+
+.closeButton {
+  flex-shrink: 0;
+  margin-inline-end: calc(-1 * var(--space-3));
+}
+
+.intro,
+.groupText,
+.groupHint {
+  color: var(--color-text-muted);
+}
+
+.groupHint {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+/* ---------- Grupos ---------- */
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend {
+  float: left; /* faz o <legend> respeitar o gap do grupo */
+  inline-size: 100%;
+  padding: 0;
+  font-weight: var(--fw-bold);
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 6.5rem), 1fr));
+  gap: var(--space-2);
+}
+
+/* Opção de rádio em formato de cartão: borda de 2px e ícone de "marcado" quando escolhida */
+.choice {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  min-block-size: 5rem;
+  padding: calc(var(--space-3) + 1px);
+  border: 1px solid var(--color-border-control);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  text-align: center;
+}
+
+.choiceChecked {
+  padding: var(--space-3);
+  border: 2px solid var(--color-ink);
+  background-color: var(--color-surface-muted);
+}
+
+.choice:has(:focus-visible) {
+  outline: 3px solid var(--focus-ring-color);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  .choice:hover {
+    border-color: var(--color-ink);
+  }
+}
+
+.choiceLabel {
+  font-weight: var(--fw-semibold);
+  line-height: 1.25;
+}
+
+.choiceHint {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+}
+
+.choiceCheck {
+  position: absolute;
+  inset-block-start: var(--space-1);
+  inset-inline-end: var(--space-1);
+}
+
+.sample {
+  display: grid;
+  place-items: center;
+  block-size: 1.75rem;
+  font-weight: var(--fw-bold);
+  line-height: 1;
+}
+
+.sampleText100 {
+  font-size: 1rem;
+}
+
+.sampleText125 {
+  font-size: 1.25rem;
+}
+
+.sampleText150 {
+  font-size: 1.5rem;
+}
+
+/* Amostras de contraste: quadrado meio branco, meio preto (padrão) ou preto com borda (alto) */
+.sampleContrastDefault,
+.sampleContrastHigh {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-sm);
+}
+
+.sampleContrastDefault {
+  background: linear-gradient(135deg, var(--color-surface) 50%, var(--color-red-800) 50%);
+}
+
+.sampleContrastHigh {
+  background-color: var(--color-ink);
+  box-shadow: inset 0 0 0 3px var(--color-surface);
+}
+
+/* ---------- Interruptores (checkbox nativo com papel de "switch") ---------- */
+.switch {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.switchInput {
+  flex-shrink: 0;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  margin: 0.125rem 0 0;
+  accent-color: var(--color-ink);
+  cursor: pointer;
+}
+
+.switchText {
+  display: flex;
+  flex-direction: column;
+  min-inline-size: 0;
+  overflow-wrap: anywhere; /* palavra longa (texto a 150% com espaçamento) quebra em vez de vazar */
+}
+
+.switchLabel {
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+}
+
+.switch:has(:disabled) :is(.switchInput, .switchLabel) {
+  cursor: default;
+}
+
+.switchDescription {
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+/* ---------- Libras e rodapé ---------- */
+.librasActive {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.error {
+  color: var(--color-brand-strong);
+  font-weight: var(--fw-semibold);
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-4);
+  padding-block-start: var(--space-4);
+  border-block-start: 1px solid var(--color-border);
+}
+
+.moreLink {
+  font-weight: var(--fw-semibold);
+  text-underline-offset: 0.2em;
+}
+
+/* ---------- Modos de contraste ---------- */
+:global(html[data-contrast='high']) .choiceChecked {
+  border-width: 3px;
+}
+
+/* Sem o degradê, a amostra "Padrão" vira um quadrado branco (a de alto contraste é preta) */
+:global(html[data-contrast='high']) .sampleContrastDefault {
+  background-color: #fff !important;
+}
+
+@media (forced-colors: active) {
+  .choiceChecked {
+    forced-color-adjust: none;
+    border-color: Highlight;
+    background-color: Highlight;
+    color: HighlightText;
+  }
+
+  .choiceChecked .choiceHint {
+    color: HighlightText;
+  }
+}

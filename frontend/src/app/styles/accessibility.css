@@ -1,0 +1,102 @@
+/*
+ * Preferências do menu "Acessibilidade" (src/presentation/accessibility). Viram atributos data-* no
+ * <html>, aplicados antes da primeira pintura pelo script inline do index.html.
+ * As regras usam !important de propósito: funcionam como uma folha de estilos do próprio usuário e
+ * precisam vencer os estilos dos componentes. Ajustes específicos de componentes ficam nos módulos
+ * deles, em :global(html[data-...]) .classe.
+ */
+
+/* ---------- Tamanho do texto (WCAG 1.4.4) ---------- */
+/* Tipografia, espaçamentos e larguras usam rem, então o leiaute acompanha o texto. */
+html[data-text-size='125'] {
+  font-size: 125%;
+}
+
+html[data-text-size='150'] {
+  font-size: 150%;
+}
+
+/* ---------- Espaçamento de texto: valores do critério 1.4.12 da WCAG ---------- */
+html[data-text-spacing='wide'] body,
+html[data-text-spacing='wide'] body * {
+  line-height: 1.5 !important;
+  letter-spacing: 0.12em !important;
+  word-spacing: 0.16em !important;
+}
+
+/* ---------- Destacar links ---------- */
+html[data-links='underline'] a {
+  text-decoration-line: underline !important;
+  text-decoration-thickness: 0.1em !important;
+  text-underline-offset: 0.2em !important;
+}
+
+/* ---------- Reduzir animações (as mesmas regras de prefers-reduced-motion em base.css) ---------- */
+html[data-motion='reduce'] {
+  scroll-behavior: auto;
+}
+
+html[data-motion='reduce'] *,
+html[data-motion='reduce'] *::before,
+html[data-motion='reduce'] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* ---------- VLibras desativado depois de carregado (src/presentation/accessibility/vlibras.ts) ---------- */
+html[data-libras='off'] :is(#vlibras-access-wrapper, #vlibras-app-root) {
+  display: none !important;
+}
+
+/* ---------- Alto contraste ---------- */
+/*
+ * Fundo preto, texto branco, links e foco amarelos e bordas brancas (contraste de 21:1 e 19,6:1).
+ * Todo elemento recebe fundo preto opaco: camadas sobrepostas (cabeçalho, barra fixa, menus)
+ * continuam cobrindo o conteúdo. Fotos atrás de texto são escondidas nos módulos dos componentes;
+ * fundos que carregam informação (barra de progresso, opção marcada) têm exceções nos módulos.
+ */
+html[data-contrast='high'] {
+  color-scheme: dark;
+  --color-focus: #ff0;
+  --focus-ring-color: #ff0;
+}
+
+html[data-contrast='high'] *:not(svg *) {
+  background-color: #000 !important;
+  background-image: none !important;
+  border-color: #fff !important;
+  box-shadow: none !important;
+  color: #fff !important;
+  text-shadow: none !important;
+}
+
+html[data-contrast='high'] :is(a, a *):not(svg *) {
+  color: #ff0 !important;
+}
+
+html[data-contrast='high'] a {
+  text-decoration-line: underline !important;
+}
+
+html[data-contrast='high'] ::placeholder {
+  color: #d9d9d9 !important;
+  opacity: 1;
+}
+
+html[data-contrast='high'] :focus-visible {
+  outline: 3px solid #ff0 !important;
+  outline-offset: 2px !important;
+}
+
+/* Alvos dos atalhos (conteúdo e rodapé, com tabindex=-1) recebem foco por script: sem contorno,
+   como no modo padrão (o foco visível fica no que a pessoa alcança depois com Tab) */
+html[data-contrast='high'] :is(main, footer)[tabindex='-1']:focus-visible {
+  outline: none !important;
+}
+
+html[data-contrast='high'] ::selection {
+  background-color: #ff0;
+  color: #000;
+}

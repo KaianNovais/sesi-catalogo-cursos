@@ -1,0 +1,123 @@
+/* Página de texto corrido: coluna estreita para linhas de leitura confortáveis (~75 caracteres) */
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  max-inline-size: 48rem;
+  padding-block: var(--space-12) var(--section-space);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-h2);
+}
+
+.lead {
+  color: var(--color-text-muted);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.heading {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-h3);
+}
+
+.section a {
+  font-weight: var(--fw-semibold);
+  text-underline-offset: 0.2em;
+}
+
+.inlineIcon {
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin: 0;
+}
+
+.listItem {
+  padding-inline-start: var(--space-4);
+  border-inline-start: 3px solid var(--color-brand);
+}
+
+.listItem dd {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.term {
+  font-weight: var(--fw-bold);
+}
+
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-inline-start: var(--space-6);
+}
+
+/* Largura fixa: com texto ampliado no celular, o conteúdo quebra linha em vez de alargar a tabela */
+.table {
+  inline-size: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  text-align: start;
+}
+
+.table th:first-child {
+  inline-size: 6.5em;
+}
+
+.table th,
+.table td {
+  padding: var(--space-3) var(--space-4);
+  border-block-end: 1px solid var(--color-border);
+  overflow-wrap: anywhere;
+  text-align: start;
+  vertical-align: top;
+}
+
+.table th {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+.page kbd {
+  display: inline-block;
+  min-inline-size: 1.75em;
+  padding: 0 0.4em;
+  border: 1px solid var(--color-border-control);
+  border-block-end-width: 2px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface-muted);
+  font-family: inherit;
+  font-size: 0.875em;
+  font-weight: var(--fw-semibold);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.updated {
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+}

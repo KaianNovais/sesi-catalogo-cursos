@@ -1,0 +1,133 @@
+/*
+ * Design tokens.
+ * Valores medidos/amostrados do protótipo no Figma (frame desktop de 1366px).
+ * As escalas tipográficas usam clamp(): o valor máximo é o do Figma e o mínimo
+ * é a adaptação para telas pequenas (que não existem no protótipo).
+ */
+:root {
+  /* ---------- Cores da marca ---------- */
+  --color-brand: #e30513;
+  --color-brand-strong: #d00602;
+  --color-brand-tint: #fdebec; /* vermelho da marca a 8% sobre o branco */
+  --color-red-600: #c3212c; /* cards de depoimento */
+  --color-red-700: #9a0313; /* base dos cards de curso */
+  --color-red-800: #890100; /* seções de destaque */
+  --color-red-950: #1d0300; /* rodapé */
+
+  /* ---------- Neutros ---------- */
+  --color-ink: #0c0c0d;
+  --color-ink-soft: #151313;
+  --color-ink-muted: #464647;
+  --color-text: var(--color-ink);
+  --color-text-muted: #666666; /* 5,7:1 sobre o branco (WCAG AA) */
+  --color-text-inverse: #ffffff;
+  --color-text-inverse-muted: rgb(255 255 255 / 0.62); /* rodapé: 6,9:1 sobre #1D0300 */
+  --color-border: #d9d9d9; /* divisores do Figma (cabeçalho, estatísticas, acordeão, AVA) */
+  --color-border-strong: #b3b3b3; /* contorno dos botões "outline" no Figma */
+  /* Contorno de campos de formulário: 3,4:1 sobre o branco (WCAG 1.4.11; o texto não os identifica) */
+  --color-border-control: #8a8a8a;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f6f6f6;
+
+  /* ---------- Status dos cursos (não existem no Figma; contraste AA) ---------- */
+  --color-status-open: #1e7b3c;
+  --color-status-soon: #a75a00;
+  --color-status-closed: #6b6b70;
+
+  /* Cor de destaque da categoria. Cada curso sobrescreve via style={{ '--accent': cor }} */
+  --accent: #fcd19c;
+
+  /* ---------- Tipografia ---------- */
+  --font-sans:
+    'Open Sans', 'Open Sans Fallback', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* 40 → 72px; o termo em vh limita o título em telas baixas (celular deitado) */
+  --fs-display: clamp(2.25rem, min(1.6rem + 3.9vw, 1rem + 9vh), 4.5rem);
+  --lh-display: 1.04;
+  --fs-h2: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem); /* 28 → 40px */
+  --lh-h2: 1.2;
+  --fs-stat: clamp(2.5rem, 1.9rem + 2.4vw, 3.75rem); /* 40 → 60px */
+  --lh-stat: 1.2;
+  --fs-h3: clamp(1.25rem, 1.15rem + 0.45vw, 1.5rem); /* 20 → 24px */
+  --lh-h3: 1.3;
+  --fs-lead: 1.125rem; /* 18px */
+  --lh-lead: 1.45;
+  --fs-body: 1rem; /* 16px */
+  --lh-body: 1.4;
+  --fs-small: 0.875rem; /* 14px */
+  --lh-small: 1.55;
+  --fs-overline: 0.6875rem; /* 11px */
+  --lh-overline: 1.45;
+
+  /* ---------- Espaçamento ---------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  --section-space: clamp(3rem, 2rem + 4vw, 4rem); /* 48 → 64px */
+
+  /* ---------- Layout ---------- */
+  --container-max: 71.875rem; /* 1150px: área útil do frame de 1366px */
+  /* Margem lateral; respeita o "notch" de celulares em modo paisagem (viewport-fit=cover) */
+  --gutter: max(1.25rem, env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
+  --header-height: 4rem;
+  /* Grade do Figma: 12 colunas com 16px entre elas (cards, rodapé e "Impacto" seguem essa grade) */
+  --layout-gutter: 1rem;
+  --grid-gap: 1.5rem; /* entre itens de listas como os diferenciais */
+  --course-card-height: 24.75rem; /* 396px: altura mínima dos cards de curso no Figma */
+
+  /* ---------- Formas e efeitos ---------- */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 999px;
+  --shadow-card: 0 10px 24px rgb(12 12 13 / 0.1);
+  --shadow-bar: 0 12px 32px rgb(12 12 13 / 0.24);
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+
+  /* Contorno de foco: seções escuras trocam --focus-ring-color por branco; --color-focus guarda o
+     padrão para quem precisa voltar a ele (ex.: o painel de acessibilidade aberto no cabeçalho escuro) */
+  --color-focus: #0b62d6;
+  --focus-ring-color: var(--color-focus);
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --gutter: max(2rem, env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
+    --header-height: 4.75rem; /* 76px, como no Figma */
+  }
+}
+
+/* Sistema pedindo mais contraste (macOS, iOS, Windows): textos de apoio e contornos mais escuros */
+@media (prefers-contrast: more) {
+  :root {
+    --color-text-muted: #3d3d3d; /* 10,6:1 */
+    --color-text-inverse-muted: rgb(255 255 255 / 0.85);
+    --color-border: #767676; /* 4,5:1 */
+    --color-border-strong: #595959;
+    --color-border-control: #595959;
+  }
+}
+
+/* Telas baixas (celular deitado): cabeçalho mais compacto para sobrar espaço ao conteúdo */
+@media (max-height: 30rem) and (orientation: landscape) {
+  :root {
+    --header-height: 3.5rem;
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "hosting": {
+    "public": "frontend/dist",
+    "ignore": ["**/.*"],
+    "predeploy": "npm --prefix \"$PROJECT_DIR/frontend\" run build:firebase",
+    "rewrites": [
+      {
+        "source": "/api/**",
+        "run": { "serviceId": "course-catalog-api", "region": "southamerica-east1" }
+      },
+      { "source": "**", "destination": "/index.html" }
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" },
+          { "key": "X-Content-Type-Options", "value": "nosniff" },
+          { "key": "X-Frame-Options", "value": "DENY" },
+          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+          {
+            "key": "Permissions-Policy",
+            "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+          },
+          { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" },
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self'; script-src 'self' 'sha256-c3kjeN8B/2ftoow1F+gf7vMwkku5zY7dIt1Or4STVg4=' 'sha256-tWOsGtWOHAvplNzcUgarbKjzHBUQLKzQGFdZT9sFnbM=' https://vlibras.gov.br https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://vlibras.gov.br https://cdn.jsdelivr.net; img-src 'self' data: blob: https://vlibras.gov.br https://cdn.jsdelivr.net; font-src 'self' data: https://vlibras.gov.br https://cdn.jsdelivr.net; connect-src 'self' https://vlibras.gov.br https://cdn.jsdelivr.net; frame-src https://vlibras.gov.br; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+          }
+        ]
+      },
+      {
+        "source": "{/,/index.html,/cursos,/cursos/**,/area-do-aluno,/area-do-aluno/**,/acessibilidade,/institucional/**}",
+        "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+      },
+      {
+        "source": "/assets/**",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      },
+      {
+        "source": "/fonts/**",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }]
+      },
+      {
+        "source": "/images/**",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+      }
+    ]
+  }
+}

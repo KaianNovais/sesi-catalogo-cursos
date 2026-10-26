@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit.v3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\CourseCatalog.Application\CourseCatalog.Application.csproj" />
+    <ProjectReference Include="..\..\src\CourseCatalog.Infrastructure\CourseCatalog.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\data\courses.seed.json" Link="courses.seed.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+</Project>

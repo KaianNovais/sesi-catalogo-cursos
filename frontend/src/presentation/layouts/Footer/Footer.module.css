@@ -1,0 +1,172 @@
+.footer {
+  --focus-ring-color: var(--color-text-inverse);
+
+  margin-block-start: auto;
+  /* No celular, a última linha não fica sob a barra de gestos do iPhone */
+  padding-block: var(--space-12) max(var(--space-8), env(safe-area-inset-bottom, 0px));
+  background-color: var(--color-red-950);
+  color: var(--color-text-inverse);
+  font-size: var(--fs-small);
+  line-height: 1.45;
+}
+
+.footer:focus {
+  outline: none;
+}
+
+/*
+ * Mobile: marca no topo, "Navegação" e "Suporte" lado a lado, cursos abaixo.
+ * Tablet: grade 2×2. Desktop (Figma): 4 colunas.
+ */
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    'brand brand'
+    'nav support'
+    'courses courses';
+  gap: var(--space-8) var(--layout-gutter);
+}
+
+@media (min-width: 40rem) {
+  .columns {
+    grid-template-areas:
+      'brand nav'
+      'courses support';
+  }
+}
+
+@media (min-width: 64rem) {
+  .footer {
+    /* Figma: 25px entre os ícones da última linha e o fim da página */
+    padding-block-end: 1.125rem;
+  }
+
+  .columns {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-areas: 'brand nav courses support';
+  }
+}
+
+.areaBrand {
+  grid-area: brand;
+}
+
+.areaNav {
+  grid-area: nav;
+}
+
+.areaCourses {
+  grid-area: courses;
+}
+
+.areaSupport {
+  grid-area: support;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.logo {
+  display: inline-flex;
+  align-self: flex-start;
+  /* Alinha o topo do logo com o dos títulos das colunas, como no Figma */
+  margin-block-start: var(--space-1);
+  color: var(--color-text-inverse);
+}
+
+.logo svg {
+  inline-size: auto;
+  block-size: 1.1875rem;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-style: normal;
+}
+
+.contactLink {
+  text-decoration: none;
+}
+
+.heading {
+  margin-block-end: var(--space-2);
+  font-size: var(--fs-overline);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-overline);
+  text-transform: uppercase;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  display: inline-block;
+  max-inline-size: 100%; /* com texto ampliado, quebra linha dentro da coluna */
+  padding-block: 0.125rem;
+  color: var(--color-text-inverse-muted);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--color-text-inverse);
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  /* Figma: 43px entre o último link das colunas e a linha de copyright */
+  margin-block-start: 1.875rem;
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-inverse-muted);
+}
+
+.sesiLogo {
+  flex-shrink: 0;
+  inline-size: auto;
+  block-size: 1.1875rem; /* desenho de 57×18px, como no Figma */
+}
+
+/*
+ * Figma: ícones de 24px a cada 32px, o último alinhado à margem do conteúdo. Cada link ocupa 32×32px
+ * (acima do mínimo de 24px da WCAG 2.2) e o recuo negativo compensa a folga de 4px do último.
+ */
+.social {
+  display: flex;
+  margin: 0;
+  margin-inline-end: calc(-1 * var(--space-1));
+  padding: 0;
+  list-style: none;
+}
+
+.socialLink {
+  display: grid;
+  place-items: center;
+  inline-size: 2rem;
+  block-size: 2rem;
+  border-radius: var(--radius-md);
+  color: var(--color-text-inverse);
+}
+
+.socialLink:hover {
+  background-color: rgb(255 255 255 / 0.1);
+}

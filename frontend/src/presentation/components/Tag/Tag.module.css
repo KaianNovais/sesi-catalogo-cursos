@@ -1,0 +1,30 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 1.75rem;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  background-color: var(--tag-bg, var(--accent));
+  color: var(--color-ink);
+  font-size: var(--fs-overline);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-overline);
+  text-transform: uppercase;
+}
+
+/* O ícone não encolhe quando o rótulo quebra linha (texto ampliado) */
+.tag svg {
+  flex-shrink: 0;
+}
+
+/* Contorno só nos modos de contraste (o fundo pastel some neles) */
+:global(html[data-contrast='high']) .tag {
+  border: 1px solid;
+}
+
+@media (forced-colors: active) {
+  .tag {
+    border: 1px solid CanvasText;
+  }
+}
